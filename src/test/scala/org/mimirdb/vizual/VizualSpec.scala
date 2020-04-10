@@ -18,12 +18,12 @@ class VizualSpec
     val script = 
       Vizual.script
     /* 1 */ .insertColumn( "double", values = col("id") * 2 )
-    /* 2 */ .deleteRow( PositionalRowSelection(0, Some(10)) )
+    /* 2 */ .deleteRow( PositionalRowSelection.to(10) )
     /* 3 */ .insertRow( values = Seq(lit(1l), lit(18l)))
     /* 4 */ .deleteColumn( "id" )
     /* 5 */ .renameColumn( "double", "theValue" )
     /* 6 */ .sort( "theValue", Descending )
-    /* 7 */ .update( "theValue", PositionalRowSelection(0, Some(1)), col("theValue") * 2 )
+    /* 7 */ .update( "theValue", PositionalRowSelection.at(0), col("theValue") * 2 )
 
     val results = script(a).collect().toSeq
 

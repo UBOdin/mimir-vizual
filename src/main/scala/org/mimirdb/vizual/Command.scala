@@ -110,7 +110,7 @@ case class Sort(
 // object Sort { implicit val format: Format[Sort] = Json.format }
 
 case class Update(
-  columns: String,
+  column: String,
   rows: RowSelection,
   value: Column
 ) extends Command
