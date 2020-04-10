@@ -31,16 +31,16 @@ case class ExplicitRowSelection(rows: Set[String]) extends RowSelection
   def annotation = Some(RowIdAnnotation())
 }
 
-case class PositionalRowSelection(low: Int, high: Option[Int]) extends RowSelection
+case class PositionalRowSelection(low: Long, high: Option[Long]) extends RowSelection
 {
   def predicate: Column = {
     if(low <= 0 && high.isEmpty) { return lit(true) }
     val seqAttribute = col(AnnotateWithSequenceNumber.ATTRIBUTE)
     val predicates = 
       Seq(
-        if(low > 0) { Some(seqAttribute < low) }
+        if(low > 0) { Some(seqAttribute >= low) }
         else { None },
-        high.map { seqAttribute >= _ }
+        high.map { seqAttribute < _ }
       ).flatten
 
     predicates.tail.fold(predicates.head) { _ or _ }

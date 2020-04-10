@@ -145,14 +145,14 @@ class AnnotateWithRowIds(
         val newAnnotation = annotationAttribute()
 
         (
-          annotate(
-            Project(
-              plan.output :+ newAnnotation,
-              Join(lhs, rhs, joinType, condition, hint)
-            ),
-            newAnnotation.exprId,
-            UnresolvedAttribute("LHS_"+rowIdAttribute),
-            UnresolvedAttribute("RHS_"+rowIdAttribute)
+          Project(
+            plan.output :+ newAnnotation,
+            annotate(
+              Join(lhs, rhs, joinType, condition, hint),
+              newAnnotation.exprId,
+              UnresolvedAttribute("LHS_"+rowIdAttribute),
+              UnresolvedAttribute("RHS_"+rowIdAttribute)
+            )
           ), 
           newAnnotation
         )
@@ -205,7 +205,7 @@ class AnnotateWithRowIds(
           isStreaming: Boolean) => 
       {
         // Use the range identifier itself as the annotation.
-        annotate(plan, output(0))
+        annotate(plan, Cast(output(0), LongType))
       }
 
       /*********************************************************/

@@ -179,7 +179,6 @@ object AnnotateWithSequenceNumber
       ),
       planWithPartitionedIdentifierAttributes
     )
-    ???
 
   }
 }

@@ -3,7 +3,7 @@ package org.mimirdb.vizual
 import play.api.libs.json._
 
 import org.apache.spark.sql.Column
-import org.apache.spark.sql.catalyst.expressions.SortDirection
+import org.apache.spark.sql.catalyst.expressions.{ SortDirection, Ascending }
 
 sealed trait Command
 {
@@ -102,17 +102,17 @@ case class RenameColumn(
 
 case class Sort(
   column: String,
-  ascending: SortDirection
+  ascending: SortDirection = Ascending
 ) extends Command
 {
   def invalidatesSortOrder = true
 }
 // object Sort { implicit val format: Format[Sort] = Json.format }
 
-case class UpdateCell(
+case class Update(
   columns: String,
   rows: RowSelection,
-  values: Column
+  value: Column
 ) extends Command
 {
   def invalidatesSortOrder = false
