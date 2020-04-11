@@ -113,6 +113,7 @@ object Vizual
         }
         case Update(column, rows, value) => {
           df = rows.annotateIfNeeded(df)
+          logger.trace(s"Applying update to annotated\n${df.queryExecution.analyzed.treeString}")
           df = df.select(
             df.schema.fieldNames.map { 
               case field if column.equalsIgnoreCase(field) => 

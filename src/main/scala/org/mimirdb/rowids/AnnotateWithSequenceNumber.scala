@@ -39,6 +39,10 @@ object AnnotateWithSequenceNumber
     attribute: String = ATTRIBUTE, 
     offset:Long = 0
   ): DataFrame = {
+    if(df.schema.fieldNames.contains(ATTRIBUTE)){
+      return df
+    }
+
     val annotatedPlan = 
       apply(
         df.queryExecution.analyzed,

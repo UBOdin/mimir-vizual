@@ -59,7 +59,8 @@ case class PositionalRowSelection(low: Long, high: Option[Long]) extends RowSele
 
     predicates.tail.fold(predicates.head) { _ or _ }
   }
-  def annotation = Some(SequenceNumberAnnotation())
+  def isAll = (low == 0) && (high == None)
+  def annotation = if(isAll) { None } else { Some(SequenceNumberAnnotation()) }
   def canIntersect(other: RowSelection): Boolean = {
     other match { 
       case PositionalRowSelection(otherLow, otherHigh) => {
