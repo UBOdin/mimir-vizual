@@ -2,6 +2,9 @@ package org.mimirdb.vizual
 
 import org.mimirdb.spark.expressionLogic.attributesOfExpression
 
+import org.mimirdb.vizual.types._
+import org.mimirdb.util.MergeMaps
+
 /**
  * Sort update commands to present users with more intuitive, spreadsheet-like
  * behavior.
@@ -14,7 +17,7 @@ import org.mimirdb.spark.expressionLogic.attributesOfExpression
  *   B = 2
  * At the end of the script, C is going to be 5 (=3+2), in spite of the fact that 
  * it comes before B is set to 2.  To mimic this behavior, this function object
- * sorts a sequence of updates in topological order of their dependencies.  
+ * sorts a sequence of commands in topological order of their dependencies.  
  * Evaluating the resulting script in order produces the desired effect.
  * 
  * The algorithm is something along the lines of insertion sort with a bit of
@@ -32,28 +35,28 @@ import org.mimirdb.spark.expressionLogic.attributesOfExpression
  *     sort we can still get O(N) performance if the list is already
  *     sorted.
  */
-object TopologicalSort
+object MakeUpdatesLazy
 {
 
-  type Conflicts = Map[String, Seq[RowSelection]]
+  type Conflicts = Map[String, Option[Set[RowIdentity]]]
 
   class CyclicalFormulaDependency(a: Update, b: Update, conflicts: Conflicts)
     extends Exception(s"{ $conflicts } :: $a :: $b involves a cycle")
 
-  def apply(updates: Seq[Update]): Seq[Update] =
-    fetchNextCommute(updates.toList, Map.empty)._2
+  def apply(commands: Seq[Update]): Seq[Update] =
+    topologicalSort(commands.toList, Map.empty)._2
 
 
   /** 
    * A bubble-sort-esque recursive topological sort.
    * 
-   * `updates` is a list of updates in arbitrary order.
+   * `commands` is a list of commands in arbitrary order.
    * `conflicts` is a collection of column/region pairs indexed by column.
    *
    * findNextCommute returns a 2-tuple (head, rest) with two guarantees.
    * - First, `update :: rest` is guaranteed to be a topologically sorted 
-   *   transpose of `updates`. 
-   * - Furthermore, `update` is an element of `updates` that writes to a column in
+   *   transpose of `commands`. 
+   * - Furthermore, `update` is an element of `commands` that writes to a column in
    *   `conflicts` with an overlapping region.  In other words, 
    * 
    * The basic trick is that findNextCommute recursively calls itself, each time
@@ -61,10 +64,10 @@ object TopologicalSort
    * elements (using `conflicts`), and then repeatedly pulling conflicting elements
    * back through the list.
    */ 
-  def fetchNextCommute(updates: List[Update], conflicts: Conflicts):
+  def topologicalSort(commands: List[Update], conflicts: Conflicts):
     (Option[Update], List[Update]) =
   {
-    updates match { 
+    commands match { 
       case Nil => return (None, Nil)
       case initialHead :: initialRest => {
         var head = initialHead
@@ -78,7 +81,7 @@ object TopologicalSort
         for(i <- 0 until (rest.size+2)) {
           assert(rest.size <= initialRest.size)
 
-          if(isAConflict(head, conflicts)){ 
+          if(isAConflict(conflicts, head)){ 
             // Possibility 1: `head` conflicts with a preceding element in the
             // list.  Commute it backwards
             return (Some(head), rest)
@@ -86,22 +89,31 @@ object TopologicalSort
             // Possibility 2: `head` is safe to follow preceding operations.
             // If so, find the first subsequent update that needs to be
             // commuted with it or another preceding operation.
-            val (updateToCommute, remainingUpdates) =
-              fetchNextCommute(rest, extendConflicts(head, conflicts))
+            val (updateToCommute, remainingCommands) =
+              topologicalSort(rest, extendConflicts(conflicts, head))
 
             if(updateToCommute.isEmpty) { 
               // If nothing needs to be commuted, we're done!
-              return (None, head :: remainingUpdates)
+              return (None, head :: remainingCommands)
             } else {
-              val update = updateToCommute.get
-              // Test for cycles:
-              if(isAConflict(head, extendConflicts(update, conflicts))){
-                throw new CyclicalFormulaDependency( head, update, conflicts )
+              // for now, updates commute toll-free
+              val (commutedUpdate, commutedHead) = (updateToCommute.get, Some(head))
+
+              // if commuting update through head eliminates one of the two, then
+              // pop the stack and repeat.
+              if(commutedHead.isEmpty){
+                rest = remainingCommands
+                head = commutedUpdate
+              } else { 
+                // Test for cycles:
+                if(isAConflict(extendConflicts(conflicts, commutedHead.get), commutedUpdate)) {
+                  throw new CyclicalFormulaDependency( commutedUpdate, commutedHead.get, conflicts )
+                }
+                // If we're safe to swap, then swap and continue
+                assert(remainingCommands.size <= rest.size - 1)
+                rest = commutedHead.get :: remainingCommands
+                head = commutedUpdate
               }
-              // If we're safe to swap, then swap and continue
-              assert(remainingUpdates.size <= rest.size - 1)
-              rest = head :: remainingUpdates
-              head = update
             }
           }
         }
@@ -111,12 +123,12 @@ object TopologicalSort
   }
 
   /**
-   * Test whether `update` conflicts with any of the listed conflicts
+   * Test whether `command` conflicts with any of the listed conflicts
    * 
-   * An update conflicts with a preceding update if it writes to a value
-   * read from by the preceding update.  `conflicts` is expected to contain
+   * A command conflicts with a preceding command if it writes to a value
+   * read from by the preceding command.  `conflicts` is expected to contain
    * a list of column/region pairs (indexed by column) of reads from preceding
-   * operations.  `update` conflicts if 
+   * operations.  `command` conflicts if 
    * 1. it writes to a column listed in `conflicts`
    * 2. its target region overlaps with the corresponding region of `conflicts`
    *
@@ -126,22 +138,37 @@ object TopologicalSort
    *
    * Also note that column names are expected to be given *in lower case*
    */
-  def isAConflict(update: Update, conflicts: Conflicts): Boolean = 
-    return conflicts.getOrElse(update.column.toLowerCase, Seq.empty)
-                    .exists { update.rows.canIntersect(_) }
-
+  def isAConflict(conflicts: Conflicts, command: Update): Boolean = 
+    command match {
+      case Update(column, Some(rows), value) => {
+        if(conflicts contains column){
+          conflicts(column) match {
+            case None => true
+            case Some(conflictRows) => !(rows & conflictRows).isEmpty
+          }
+        } else { false }
+      }
+      case Update(column, None, value) => 
+        conflicts contains column 
+    }
 
   /**
    * Extend a list of conflicts to include the updated fields of a new
    * update command
    */
-  def extendConflicts(update: Update, initial: Conflicts): Conflicts = 
-    attributesOfExpression(update.value.expr)
-      .map { _.name.toLowerCase }
-      .foldLeft(initial) { (curr, column) =>
-        val originalConflictsForColumn = initial.getOrElse(column, Seq())
-        val updatedConflictsForColumn = originalConflictsForColumn :+ update.rows
-        initial ++ Some(column -> updatedConflictsForColumn) 
-      }
+  def extendConflicts(initial: Conflicts, command: Update): Conflicts = 
+  {
+    val newConflicts = 
+      attributesOfExpression(command.value.expr)
+        .map { _.name.toLowerCase }
+        .map { _ -> command.rows }
+        .toMap:Conflicts
+    MergeMaps.simple(initial, newConflicts) { 
+      case (None, _) => None
+      case (_, None) => None
+      case (Some(l), Some(r)) => Some(l | r)
+    }
+  }
+
 
 }

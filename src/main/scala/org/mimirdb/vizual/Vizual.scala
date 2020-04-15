@@ -13,15 +13,22 @@ object Vizual
   extends LazyLogging
 {
 
-  def script = new Builder(List.empty)
+  def script = new Script(List.empty)
 
   def apply(script: Seq[Command], input: DataFrame) = 
-    naive(script, input)
+  {
+    /////////////////// Evaluate ////////////////////////
+    native(script, input)
+  }
 
-  def naive(script: Seq[Command], input: DataFrame) = 
+  def simplify(script: Seq[Command]): Seq[Command] =
+    script
+
+  def native(script: Seq[Command], input: DataFrame) = 
   { 
     var df = AnnotateWithRowIds(input)
     val spark = input.queryExecution.sparkSession
+
     for(instruction <- script){
       logger.trace(s"Adding $instruction\n${df.queryExecution.analyzed.treeString}")
 
@@ -37,12 +44,10 @@ object Vizual
                    .map { df(_) }:_*
                )
         }
-        case DeleteRow(rows) => {
-          df = rows.annotateIfNeeded(df)
-          df = df.filter { not(rows.predicate) }
+        case del:DeleteRows => {
+          df = df.filter { del.predicate }
         }
-        case InsertColumn(column, positionMaybe, valuesMaybe) => {
-          val expr = valuesMaybe.getOrElse { lit(null) }
+        case InsertColumn(column, positionMaybe, value) => {
           val originalSchema = df.schema.fieldNames.filter { !_.startsWith("__MIMIR_") }
                                                    .map { df(_) } 
           val metadataSchema = df.schema.fieldNames.filter { _.startsWith("__MIMIR_") }
@@ -54,23 +59,23 @@ object Vizual
             }
           logger.trace("Insert column before: "+before.mkString(", "))
           logger.trace("Insert column after: "+after.mkString(", "))
-          df = df.select( ((before :+ expr.as(column)) ++ after ++ metadataSchema):_* )
+          df = df.select( ((before :+ new Column(value).as(column)) ++ after ++ metadataSchema):_* )
         }
-        case InsertRow(None, valuesMaybe) => {
+        case InsertRow(None, values) => {
           df = df.unionAll(singleton(
             df.schema.fields,
-            valuesMaybe.getOrElse { Seq() },
+            values,
             spark
           ))
           logger.debug(s"UNION: \n${df.queryExecution.analyzed.treeString}")
         }
-        case InsertRow(Some(position), valuesMaybe) => {
+        case InsertRow(Some(position), values) => {
           df = AnnotateWithSequenceNumber.withSequenceNumber(df) { dfWithSeq =>
             val seqAttribute = dfWithSeq(AnnotateWithSequenceNumber.ATTRIBUTE)
             dfWithSeq.filter { seqAttribute < position }
           }.unionAll(singleton(
             df.schema.fields,
-            valuesMaybe.getOrElse { Seq() },
+            values,
             spark
           )).unionAll(
             AnnotateWithSequenceNumber.withSequenceNumber(df) { dfWithSeq =>
@@ -103,21 +108,15 @@ object Vizual
                       }
           df = df.select( schema:_* )
         }
-        case Sort(column, order) => {
-          df = df.sort(
-            order match {
-              case Ascending => df(column).asc
-              case Descending => df(column).desc
-            }
-          )
+        case sort:Sort => {
+          df = sort.sortDataFrame(df)
         }
-        case Update(column, rows, value) => {
-          df = rows.annotateIfNeeded(df)
+        case update@Update(column, rows, value) => {
           logger.trace(s"Applying update to annotated\n${df.queryExecution.analyzed.treeString}")
           df = df.select(
             df.schema.fieldNames.map { 
               case field if column.equalsIgnoreCase(field) => 
-                when(rows.predicate, value)
+                when(update.predicate, value)
                   .otherwise(df(field))
                   .as(field)
               case field => df(field)
@@ -127,7 +126,7 @@ object Vizual
       }
     }
     logger.debug("==== Input DataFrame ====\n"+input.queryExecution.analyzed.treeString)
-    logger.debug("==== VIzual Script ====\n"+script.mkString("\n"))
+    logger.debug("==== Vizual Script ====\n"+Script(script).toString)
     logger.debug("==== Output DataFrame ====\n"+df.queryExecution.analyzed.treeString)
 
     df.select(
@@ -143,18 +142,16 @@ object Vizual
 
   def singleton(
     schema: Seq[StructField], 
-    values: Seq[Any], 
+    values: Map[String, Literal], 
     spark: SparkSession
   ): DataFrame =
   {
     spark.range(1).toDF
          .select(
-            schema.zipWithIndex.map { case (StructField(name, t, _, _), idx) => 
-              (
-                if(idx < values.size){ lit(values(idx)).cast(t) }
-                else { lit(null) }
-              ).as(name)
+            schema.map { case StructField(name, t, _, _) => 
+              new Column(values.getOrElse(name, new Literal(null, t))).as(name)
             }:_*
           )
   }
+
 }
