@@ -38,7 +38,7 @@ import org.mimirdb.util.MergeMaps
 object MakeUpdatesLazy
 {
 
-  type Conflicts = Map[String, Option[Set[RowIdentity]]]
+  type Conflicts = Map[String, Seq[RowSelection]]
 
   class CyclicalFormulaDependency(a: Update, b: Update, conflicts: Conflicts)
     extends Exception(s"{ $conflicts } :: $a :: $b involves a cycle")
@@ -140,16 +140,11 @@ object MakeUpdatesLazy
    */
   def isAConflict(conflicts: Conflicts, command: Update): Boolean = 
     command match {
-      case Update(column, Some(rows), value) => {
+      case Update(column, rows, value) => {
         if(conflicts contains column){
-          conflicts(column) match {
-            case None => true
-            case Some(conflictRows) => !(rows & conflictRows).isEmpty
-          }
+          conflicts(column).exists { _.canIntersect(rows) }
         } else { false }
       }
-      case Update(column, None, value) => 
-        conflicts contains column 
     }
 
   /**
@@ -161,13 +156,9 @@ object MakeUpdatesLazy
     val newConflicts = 
       attributesOfExpression(command.value.expr)
         .map { _.name.toLowerCase }
-        .map { _ -> command.rows }
+        .map { _ -> Seq(command.rows) }
         .toMap:Conflicts
-    MergeMaps.simple(initial, newConflicts) { 
-      case (None, _) => None
-      case (_, None) => None
-      case (Some(l), Some(r)) => Some(l | r)
-    }
+    MergeMaps.simple(initial, newConflicts) { _ ++ _ }
   }
 
 

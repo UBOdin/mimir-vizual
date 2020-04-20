@@ -10,10 +10,7 @@ import org.mimirdb.spark.SparkPrimitive
 
 object types
 {
-  type RowPosition = Long
-  type RowIdentity = Long
   type SparkValue = Literal  
-
 
   implicit val literalFormat: Format[Literal] = Format(
     new Reads[Literal] { 

@@ -17,8 +17,12 @@ object Vizual
 
   def apply(script: Seq[Command], input: DataFrame) = 
   {
+    val normalized = Normalize(script)
+
+    normalized.transformUpdates { MakeUpdatesLazy(_) }
+
     /////////////////// Evaluate ////////////////////////
-    native(script, input)
+    native(normalized.commands, input)
   }
 
   def simplify(script: Seq[Command]): Seq[Command] =
@@ -32,9 +36,6 @@ object Vizual
     for(instruction <- script){
       logger.trace(s"Adding $instruction\n${df.queryExecution.analyzed.treeString}")
 
-      if(instruction.invalidatesSortOrder){
-        df = AnnotateWithSequenceNumber.strip(df)
-      }
       instruction match {
         case DeleteColumn(col) => {
           df = df.select(
@@ -45,9 +46,9 @@ object Vizual
                )
         }
         case del:DeleteRows => {
-          df = df.filter { del.predicate }
+          ???
         }
-        case InsertColumn(column, positionMaybe, value) => {
+        case InsertColumn(column, positionMaybe) => {
           val originalSchema = df.schema.fieldNames.filter { !_.startsWith("__MIMIR_") }
                                                    .map { df(_) } 
           val metadataSchema = df.schema.fieldNames.filter { _.startsWith("__MIMIR_") }
@@ -59,23 +60,16 @@ object Vizual
             }
           logger.trace("Insert column before: "+before.mkString(", "))
           logger.trace("Insert column after: "+after.mkString(", "))
-          df = df.select( ((before :+ new Column(value).as(column)) ++ after ++ metadataSchema):_* )
+          df = df.select( ((before :+ lit(null).as(column)) ++ after ++ metadataSchema):_* )
         }
-        case InsertRow(None, values) => {
-          df = df.unionAll(singleton(
-            df.schema.fields,
-            values,
-            spark
-          ))
-          logger.debug(s"UNION: \n${df.queryExecution.analyzed.treeString}")
-        }
-        case InsertRow(Some(position), values) => {
+        case InsertRow(position, tag, identifier) => {
+          ???
           df = AnnotateWithSequenceNumber.withSequenceNumber(df) { dfWithSeq =>
             val seqAttribute = dfWithSeq(AnnotateWithSequenceNumber.ATTRIBUTE)
             dfWithSeq.filter { seqAttribute < position }
           }.unionAll(singleton(
             df.schema.fields,
-            values,
+            Map(tag.get -> ???),
             spark
           )).unionAll(
             AnnotateWithSequenceNumber.withSequenceNumber(df) { dfWithSeq =>
@@ -116,13 +110,14 @@ object Vizual
           df = df.select(
             df.schema.fieldNames.map { 
               case field if column.equalsIgnoreCase(field) => 
-                when(update.predicate, value)
+                when(rows.predicate, value)
                   .otherwise(df(field))
                   .as(field)
               case field => df(field)
             }:_*
           )
         }
+        case TagRowOrder(tag) => ???
       }
     }
     logger.debug("==== Input DataFrame ====\n"+input.queryExecution.analyzed.treeString)
