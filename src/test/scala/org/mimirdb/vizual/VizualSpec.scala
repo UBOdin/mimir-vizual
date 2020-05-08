@@ -18,12 +18,13 @@ class VizualSpec
     val script = 
       Vizual.script
     /* 1 */ .insertColumn( "double", value = col("id") * 2 )
-    /* 2 */ .deleteRows( Set(0, 1, 2, 3, 4, 5, 6, 7, 8, 9) )
-    /* 3 */ .insertRow( values = Map("id" -> Literal(1l), "double" -> Literal(18l)))
-    /* 4 */ .deleteColumn( "id" )
-    /* 5 */ .renameColumn( "double", "theValue" )
-    /* 6 */ .sort( "theValue", false )
-    // /* 7 */ .update( "theValue", Some((0), col("theValue") * 2 )
+    /* 2 */ .deleteRows( GlobalRowIdentifiers.ofSource(0, 1, 2, 3, 4, 5, 6, 7, 8, 9) )
+    /* 3 */ .insertRow()
+    /* 4 */ .update( Map("id" -> lit(1l), "double" -> lit(18l)), GlobalRowIdentifiers.ofInserted(0) )
+    /* 5 */ .deleteColumn( "id" )
+    /* 6 */ .renameColumn( "double", "theValue" )
+    /* 7 */ .sort( "theValue", false )
+    // /* 8 */ .update( "theValue", Some((0), col("theValue") * 2 )
 
     // print(script.get.mkString("\n"))
 

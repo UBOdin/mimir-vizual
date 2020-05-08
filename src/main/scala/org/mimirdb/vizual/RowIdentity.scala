@@ -1,13 +1,22 @@
 package org.mimirdb.vizual
 
 import play.api.libs.json._
+import org.apache.spark.sql.Column
+import org.apache.spark.sql.functions.lit
+import org.apache.spark.sql.catalyst.expressions.Literal
+
+import org.mimirdb.rowids.MergeRowIds
 
 sealed trait RowIdentity
 {
   def toJson: JsValue
 }
 sealed trait GlobalRowIdentifier extends RowIdentity
-
+{
+  def toLong: Long 
+  def toLiteral: Literal = Literal(toLong)
+  def toColumn: Column = lit(toLong)
+}
 object GlobalRowIdentifier
 { 
   implicit val format = Format[GlobalRowIdentifier](
@@ -33,16 +42,22 @@ object RowIdentity
 /**
  * Identifies the row with the explicitly specified global identifiers
  */
-case class SourceRowIdentifier(source: Long) extends RowIdentity
-{ def toJson = Json.toJson(this) }
+case class SourceRowIdentifier(source: Long) extends GlobalRowIdentifier
+{
+  def toLong: Long = MergeRowIds.literals(source, 1l)
+  def toJson = Json.toJson(this)
+}
 object SourceRowIdentifier { implicit val format: Format[SourceRowIdentifier] = Json.format }
 
 /**
  * Identifies a row inserted this session by the index of the insert command (0 is the first
  * insert command in the script)
  */
-case class InsertedRowIdentifier(inserted: Int) extends RowIdentity
-{ def toJson = Json.toJson(this) }
+case class InsertedRowIdentifier(inserted: Long) extends GlobalRowIdentifier
+{ 
+  def toLong: Long = MergeRowIds.literals(inserted, 2l)
+  def toJson = Json.toJson(this) 
+}
 object InsertedRowIdentifier { implicit val format: Format[InsertedRowIdentifier] = Json.format }
 
 

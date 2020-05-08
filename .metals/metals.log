@@ -1,0 +1,1258 @@
+INFO  started: Metals version 0.8.4 in workspace '/home/okennedy/Documents/Mimir/Vizual'
+INFO  time: initialize in 0.29s
+INFO  Selected port 5031
+INFO  Started Metals http server at http://127.0.0.1:5031
+INFO  running '/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java -Djline.terminal=jline.UnsupportedTerminal -Dsbt.log.noformat=true -Dfile.encoding=UTF-8 -jar /tmp/metals2282791747119077529/sbt-launch.jar -Dbloop.export-jar-classifiers=sources bloopInstall'
+INFO  [info] Loading settings for project vizual-build from metals.sbt ...
+INFO  [info] Loading project definition from /home/okennedy/Documents/Mimir/Vizual/project
+INFO  [info] Loading settings for project vizual from build.sbt ...
+INFO  [info] Set current project to mimir-vizual (in build file:/home/okennedy/Documents/Mimir/Vizual/)
+INFO  [warn] There may be incompatibilities among your library dependencies; run 'evicted' to see detailed eviction warnings.
+INFO  [success] Generated .bloop/vizual.json
+INFO  [success] Generated .bloop/vizual-test.json
+INFO  [success] Total time: 9 s, completed May 7, 2020 3:05:22 PM
+INFO  build tool exit: 0
+INFO  time: ran 'sbt bloopInstall' in 21s
+Starting the bsp launcher for bloop...
+Opening a bsp server connection with 'bsp --protocol local --socket /tmp/bsp-launcher1926009384638436993/bsp.socket'...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+No server running at 127.0.0.1:8212, let's fire one...
+Resolving ch.epfl.scala:bloop-frontend_2.12:1.4.0-RC1-190-ef7d8dba...
+Starting bloop server at 127.0.0.1:8212...
+Attempting a connection to the server...
+Attempting a connection to the server...
+Attempting a connection to the server...
+Attempting a connection to the server...
+[0m[32m[D][0m Loading 2 projects from '/home/okennedy/Documents/Mimir/Vizual/.bloop'...
+[0m[32m[D][0m Loading project from '/home/okennedy/Documents/Mimir/Vizual/.bloop/vizual.json'
+[0m[32m[D][0m Loading project from '/home/okennedy/Documents/Mimir/Vizual/.bloop/vizual-test.json'
+[0m[32m[D][0m Cache miss for scala instance org.scala-lang:scala-compiler:2.12.10.
+[0m[32m[D][0m   => /home/okennedy/.sbt/boot/scala-2.12.10/lib/jansi.jar
+[0m[32m[D][0m   => /home/okennedy/.sbt/boot/scala-2.12.10/lib/jline.jar
+[0m[32m[D][0m   => /home/okennedy/.sbt/boot/scala-2.12.10/lib/scala-compiler.jar
+[0m[32m[D][0m   => /home/okennedy/.sbt/boot/scala-2.12.10/lib/scala-library.jar
+[0m[32m[D][0m   => /home/okennedy/.sbt/boot/scala-2.12.10/lib/scala-reflect.jar
+[0m[32m[D][0m   => /home/okennedy/.sbt/boot/scala-2.12.10/lib/scala-xml_2.12.jar
+[0m[32m[D][0m Missing analysis file for project 'vizual'
+[0m[32m[D][0m Missing analysis file for project 'vizual-test'
+[0m[32m[D][0m Waiting for a connection at local:///tmp/bsp-launcher1926009384638436993/bsp.socket...
+The server is listening for incoming connections at local:///tmp/bsp-launcher1926009384638436993/bsp.socket...
+Starting thread that pumps stdin and redirects it to the bsp server...
+Starting thread that pumps server stdout and redirects it to the client stdout...
+INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/okennedy/.cache/metals/bsp.trace.json
+INFO  time: connected to build server in 6.33s
+INFO  Connected to Build server v1.4.0-RC1-190-ef7d8dba
+INFO  time: imported build in 0.13s
+WARN  Could not find java sources in None. Java symbols will not be available.
+INFO  time: indexed workspace in 4.71s
+INFO  compiling vizual (15 scala sources)
+INFO  time: compiled vizual in 14s
+INFO  running '/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java -Djline.terminal=jline.UnsupportedTerminal -Dsbt.log.noformat=true -Dfile.encoding=UTF-8 -jar /tmp/metals7415428535150333797/sbt-launch.jar -Dbloop.export-jar-classifiers=sources bloopInstall'
+INFO  [info] Loading settings for project vizual-build from metals.sbt ...
+INFO  [info] Loading project definition from /home/okennedy/Documents/Mimir/Vizual/project
+INFO  [info] Loading settings for project vizual from build.sbt ...
+INFO  [info] Set current project to mimir-vizual (in build file:/home/okennedy/Documents/Mimir/Vizual/)
+INFO  [success] Generated .bloop/vizual.json
+INFO  [success] Generated .bloop/vizual-test.json
+INFO  [success] Total time: 2 s, completed May 7, 2020 3:10:07 PM
+INFO  build tool exit: 0
+INFO  time: ran 'sbt bloopInstall' in 8s
+INFO  disconnected: build server
+No more data in the client stdin, exiting...
+Starting the bsp launcher for bloop...
+Opening a bsp server connection with 'bsp --protocol local --socket /tmp/bsp-launcher3308655174981242813/bsp.socket'...
+Waiting for the bsp connection to come up...
+No more data in the server stdin, exiting...
+No more data in the server stdin, exiting...
+[0m[32m[D][0m Loading workspace settings from bloop.settings.json
+[0m[32m[D][0m Waiting for a connection at local:///tmp/bsp-launcher3308655174981242813/bsp.socket...
+The server is listening for incoming connections at local:///tmp/bsp-launcher3308655174981242813/bsp.socket...
+Starting thread that pumps stdin and redirects it to the bsp server...
+Starting thread that pumps server stdout and redirects it to the client stdout...
+INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/okennedy/.cache/metals/bsp.trace.json
+INFO  Connected to Build server v1.4.0-RC1-190-ef7d8dba
+WARN  Could not find java sources in None. Java symbols will not be available.
+INFO  time: indexed workspace in 1.61s
+INFO  compiling vizual (15 scala sources)
+INFO  time: compiled vizual in 1.88s
+INFO  compiling vizual (15 scala sources)
+INFO  time: compiled vizual in 1.6s
+INFO  compiling vizual (15 scala sources)
+INFO  time: compiled vizual in 1.43s
+INFO  compiling vizual (15 scala sources)
+INFO  time: compiled vizual in 1.17s
+INFO  compiling vizual (15 scala sources)
+INFO  time: compiled vizual in 1.09s
+INFO  compiling vizual (15 scala sources)
+INFO  time: compiled vizual in 0.94s
+INFO  compiling vizual (15 scala sources)
+INFO  time: compiled vizual in 0.93s
+INFO  compiling vizual (15 scala sources)
+INFO  time: compiled vizual in 6.12s
+something's wrong: no file:///home/okennedy/Documents/Mimir/Vizual/src/main/scala/org/mimirdb/vizual/CompiledScript.scala in Seq[(org.mimirdb.vizual.TagRowOrder, Seq[org.mimirdb.vizual.InsertRow])]RangePosition(file:///home/okennedy/Documents/Mimir/Vizual/src/main/scala/org/mimirdb/vizual/CompiledScript.scala, 399, 399, 433)
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 0.17s
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 1.02s
+something's wrong: no file:///home/okennedy/Documents/Mimir/Vizual/src/main/scala/org/mimirdb/vizual/CompiledScript.scala in Seq[<error>]RangePosition(file:///home/okennedy/Documents/Mimir/Vizual/src/main/scala/org/mimirdb/vizual/CompiledScript.scala, 1678, 1678, 1691)
+something's wrong: no file:///home/okennedy/Documents/Mimir/Vizual/src/main/scala/org/mimirdb/vizual/CompiledScript.scala in Seq[<error>]RangePosition(file:///home/okennedy/Documents/Mimir/Vizual/src/main/scala/org/mimirdb/vizual/CompiledScript.scala, 1678, 1678, 1691)
+something's wrong: no file:///home/okennedy/Documents/Mimir/Vizual/src/main/scala/org/mimirdb/vizual/CompiledScript.scala in Seq[Seq[(org.mimirdb.vizual.TagRowOrder, Seq[org.mimirdb.vizual.InsertRow])]]RangePosition(file:///home/okennedy/Documents/Mimir/Vizual/src/main/scala/org/mimirdb/vizual/CompiledScript.scala, 388, 388, 426)
+something's wrong: no file:///home/okennedy/Documents/Mimir/Vizual/src/main/scala/org/mimirdb/vizual/CompiledScript.scala in Seq[<error>]RangePosition(file:///home/okennedy/Documents/Mimir/Vizual/src/main/scala/org/mimirdb/vizual/CompiledScript.scala, 2178, 2178, 2191)
+something's wrong: no file:///home/okennedy/Documents/Mimir/Vizual/src/main/scala/org/mimirdb/vizual/CompiledScript.scala in Seq[<error>]RangePosition(file:///home/okennedy/Documents/Mimir/Vizual/src/main/scala/org/mimirdb/vizual/CompiledScript.scala, 2178, 2178, 2193)
+something's wrong: no file:///home/okennedy/Documents/Mimir/Vizual/src/main/scala/org/mimirdb/vizual/CompiledScript.scala in Seq[<error>]RangePosition(file:///home/okennedy/Documents/Mimir/Vizual/src/main/scala/org/mimirdb/vizual/CompiledScript.scala, 2191, 2191, 2204)
+something's wrong: no file:///home/okennedy/Documents/Mimir/Vizual/src/main/scala/org/mimirdb/vizual/CompiledScript.scala in Seq[<error>]RangePosition(file:///home/okennedy/Documents/Mimir/Vizual/src/main/scala/org/mimirdb/vizual/CompiledScript.scala, 2191, 2191, 2204)
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 0.21s
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 0.26s
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 0.14s
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 0.24s
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 0.96s
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 0.2s
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 0.22s
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 0.22s
+something's wrong: no file:///home/okennedy/Documents/Mimir/Vizual/src/main/scala/org/mimirdb/vizual/CompiledScript.scala in Map[String,Seq[Long]]RangePosition(file:///home/okennedy/Documents/Mimir/Vizual/src/main/scala/org/mimirdb/vizual/CompiledScript.scala, 2284, 2284, 2482)
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 1.19s
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 0.9s
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 0.19s
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 0.23s
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 0.2s
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 0.18s
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 0.26s
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 0.2s
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 0.22s
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 0.9s
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 0.91s
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 0.26s
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 0.32s
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 0.2s
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 0.21s
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 0.26s
+INFO  compiling vizual (1 scala source)
+WARN  there was one deprecation warning (since 2.12.0); re-run with -deprecation for details
+INFO  time: compiled vizual in 0.98s
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 0.23s
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 0.24s
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 0.24s
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 0.23s
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 0.27s
+something's wrong: no file:///home/okennedy/Documents/Mimir/Vizual/src/main/scala/org/mimirdb/vizual/CompiledScript.scala in Seq[<error>]RangePosition(file:///home/okennedy/Documents/Mimir/Vizual/src/main/scala/org/mimirdb/vizual/CompiledScript.scala, 3842, 3842, 3855)
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 0.25s
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 0.24s
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 0.26s
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 0.25s
+something's wrong: no file:///home/okennedy/Documents/Mimir/Vizual/src/main/scala/org/mimirdb/vizual/CompiledScript.scala in () => <error>RangePosition(file:///home/okennedy/Documents/Mimir/Vizual/src/main/scala/org/mimirdb/vizual/CompiledScript.scala, 1889, 1897, 3892)
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 0.26s
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 0.24s
+INFO  compiling vizual (1 scala source)
+WARN  there was one deprecation warning (since 2.12.0); re-run with -deprecation for details
+INFO  time: compiled vizual in 1.09s
+INFO  compiling vizual (1 scala source)
+WARN  there was one deprecation warning (since 2.12.0); re-run with -deprecation for details
+INFO  time: compiled vizual in 1.01s
+INFO  compiling vizual (1 scala source)
+WARN  there was one deprecation warning (since 2.12.0); re-run with -deprecation for details
+INFO  time: compiled vizual in 1.12s
+No more data in the client stdin, exiting...
+No more data in the server stdin, exiting...
+No more data in the server stdin, exiting...
+INFO  started: Metals version 0.8.4 in workspace '/home/okennedy/Documents/Mimir/Vizual'
+INFO  time: initialize in 0.32s
+Starting the bsp launcher for bloop...
+Opening a bsp server connection with 'bsp --protocol local --socket /tmp/bsp-launcher4808621858383895472/bsp.socket'...
+Waiting for the bsp connection to come up...
+[0m[32m[D][0m Loading workspace settings from bloop.settings.json
+[0m[32m[D][0m Waiting for a connection at local:///tmp/bsp-launcher4808621858383895472/bsp.socket...
+The server is listening for incoming connections at local:///tmp/bsp-launcher4808621858383895472/bsp.socket...
+Starting thread that pumps stdin and redirects it to the bsp server...
+Starting thread that pumps server stdout and redirects it to the client stdout...
+INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/okennedy/.cache/metals/bsp.trace.json
+INFO  skipping build import with status 'Installed'
+INFO  Selected port 5031
+INFO  time: connected to build server in 0.28s
+INFO  Connected to Build server v1.4.0-RC1-190-ef7d8dba
+INFO  Started Metals http server at http://127.0.0.1:5031
+WARN  Could not find java sources in None. Java symbols will not be available.
+INFO  time: indexed workspace in 3.08s
+INFO  compiling vizual-test (4 scala sources)
+INFO  time: compiled vizual-test in 0.64s
+INFO  compiling vizual-test (4 scala sources)
+INFO  time: compiled vizual-test in 0.52s
+INFO  compiling vizual-test (4 scala sources)
+INFO  time: compiled vizual-test in 0.39s
+INFO  compiling vizual-test (4 scala sources)
+INFO  time: compiled vizual-test in 0.37s
+INFO  compiling vizual-test (4 scala sources)
+INFO  time: compiled vizual-test in 0.32s
+INFO  compiling vizual-test (4 scala sources)
+INFO  time: compiled vizual-test in 0.34s
+INFO  /home/okennedy/Documents/Mimir/Vizual/src/test/scala/org/mimirdb/vizual/MakeUpdatesLazySpec.scala:42:54: stale bloop error: type mismatch;
+ found   : Int(1)
+ required: org.mimirdb.vizual.GlobalRowIdentifier
+        /* 1 */ Update("A", GlobalRowIdentifiers(Set(1, 2, 3, 4, 5)), col("B")),  // after 2
+                                                     ^
+INFO  /home/okennedy/Documents/Mimir/Vizual/src/test/scala/org/mimirdb/vizual/MakeUpdatesLazySpec.scala:42:57: stale bloop error: type mismatch;
+ found   : Int(2)
+ required: org.mimirdb.vizual.GlobalRowIdentifier
+        /* 1 */ Update("A", GlobalRowIdentifiers(Set(1, 2, 3, 4, 5)), col("B")),  // after 2
+                                                        ^
+INFO  /home/okennedy/Documents/Mimir/Vizual/src/test/scala/org/mimirdb/vizual/MakeUpdatesLazySpec.scala:42:60: stale bloop error: type mismatch;
+ found   : Int(3)
+ required: org.mimirdb.vizual.GlobalRowIdentifier
+        /* 1 */ Update("A", GlobalRowIdentifiers(Set(1, 2, 3, 4, 5)), col("B")),  // after 2
+                                                           ^
+INFO  /home/okennedy/Documents/Mimir/Vizual/src/test/scala/org/mimirdb/vizual/MakeUpdatesLazySpec.scala:42:63: stale bloop error: type mismatch;
+ found   : Int(4)
+ required: org.mimirdb.vizual.GlobalRowIdentifier
+        /* 1 */ Update("A", GlobalRowIdentifiers(Set(1, 2, 3, 4, 5)), col("B")),  // after 2
+                                                              ^
+INFO  /home/okennedy/Documents/Mimir/Vizual/src/test/scala/org/mimirdb/vizual/MakeUpdatesLazySpec.scala:42:66: stale bloop error: type mismatch;
+ found   : Int(5)
+ required: org.mimirdb.vizual.GlobalRowIdentifier
+        /* 1 */ Update("A", GlobalRowIdentifiers(Set(1, 2, 3, 4, 5)), col("B")),  // after 2
+                                                                 ^
+INFO  /home/okennedy/Documents/Mimir/Vizual/src/test/scala/org/mimirdb/vizual/MakeUpdatesLazySpec.scala:43:54: stale bloop error: type mismatch;
+ found   : Int(1)
+ required: org.mimirdb.vizual.GlobalRowIdentifier
+        /* 2 */ Update("B", GlobalRowIdentifiers(Set(1, 2, 3, 4, 5, 6, 7)), col("C")),  // after 3, 4
+                                                     ^
+INFO  /home/okennedy/Documents/Mimir/Vizual/src/test/scala/org/mimirdb/vizual/MakeUpdatesLazySpec.scala:43:57: stale bloop error: type mismatch;
+ found   : Int(2)
+ required: org.mimirdb.vizual.GlobalRowIdentifier
+        /* 2 */ Update("B", GlobalRowIdentifiers(Set(1, 2, 3, 4, 5, 6, 7)), col("C")),  // after 3, 4
+                                                        ^
+INFO  /home/okennedy/Documents/Mimir/Vizual/src/test/scala/org/mimirdb/vizual/MakeUpdatesLazySpec.scala:43:60: stale bloop error: type mismatch;
+ found   : Int(3)
+ required: org.mimirdb.vizual.GlobalRowIdentifier
+        /* 2 */ Update("B", GlobalRowIdentifiers(Set(1, 2, 3, 4, 5, 6, 7)), col("C")),  // after 3, 4
+                                                           ^
+INFO  /home/okennedy/Documents/Mimir/Vizual/src/test/scala/org/mimirdb/vizual/MakeUpdatesLazySpec.scala:43:63: stale bloop error: type mismatch;
+ found   : Int(4)
+ required: org.mimirdb.vizual.GlobalRowIdentifier
+        /* 2 */ Update("B", GlobalRowIdentifiers(Set(1, 2, 3, 4, 5, 6, 7)), col("C")),  // after 3, 4
+                                                              ^
+INFO  /home/okennedy/Documents/Mimir/Vizual/src/test/scala/org/mimirdb/vizual/MakeUpdatesLazySpec.scala:43:66: stale bloop error: type mismatch;
+ found   : Int(5)
+ required: org.mimirdb.vizual.GlobalRowIdentifier
+        /* 2 */ Update("B", GlobalRowIdentifiers(Set(1, 2, 3, 4, 5, 6, 7)), col("C")),  // after 3, 4
+                                                                 ^
+INFO  /home/okennedy/Documents/Mimir/Vizual/src/test/scala/org/mimirdb/vizual/MakeUpdatesLazySpec.scala:43:69: stale bloop error: type mismatch;
+ found   : Int(6)
+ required: org.mimirdb.vizual.GlobalRowIdentifier
+        /* 2 */ Update("B", GlobalRowIdentifiers(Set(1, 2, 3, 4, 5, 6, 7)), col("C")),  // after 3, 4
+                                                                    ^
+INFO  /home/okennedy/Documents/Mimir/Vizual/src/test/scala/org/mimirdb/vizual/MakeUpdatesLazySpec.scala:43:72: stale bloop error: type mismatch;
+ found   : Int(7)
+ required: org.mimirdb.vizual.GlobalRowIdentifier
+        /* 2 */ Update("B", GlobalRowIdentifiers(Set(1, 2, 3, 4, 5, 6, 7)), col("C")),  // after 3, 4
+                                                                       ^
+INFO  /home/okennedy/Documents/Mimir/Vizual/src/test/scala/org/mimirdb/vizual/MakeUpdatesLazySpec.scala:44:54: stale bloop error: type mismatch;
+ found   : Int(1)
+ required: org.mimirdb.vizual.GlobalRowIdentifier
+        /* 3 */ Update("C", GlobalRowIdentifiers(Set(1, 2, 3, 4, 5, 6)), lit(30)),   // anywhere
+                                                     ^
+INFO  /home/okennedy/Documents/Mimir/Vizual/src/test/scala/org/mimirdb/vizual/MakeUpdatesLazySpec.scala:44:57: stale bloop error: type mismatch;
+ found   : Int(2)
+ required: org.mimirdb.vizual.GlobalRowIdentifier
+        /* 3 */ Update("C", GlobalRowIdentifiers(Set(1, 2, 3, 4, 5, 6)), lit(30)),   // anywhere
+                                                        ^
+INFO  /home/okennedy/Documents/Mimir/Vizual/src/test/scala/org/mimirdb/vizual/MakeUpdatesLazySpec.scala:44:60: stale bloop error: type mismatch;
+ found   : Int(3)
+ required: org.mimirdb.vizual.GlobalRowIdentifier
+        /* 3 */ Update("C", GlobalRowIdentifiers(Set(1, 2, 3, 4, 5, 6)), lit(30)),   // anywhere
+                                                           ^
+INFO  /home/okennedy/Documents/Mimir/Vizual/src/test/scala/org/mimirdb/vizual/MakeUpdatesLazySpec.scala:44:63: stale bloop error: type mismatch;
+ found   : Int(4)
+ required: org.mimirdb.vizual.GlobalRowIdentifier
+        /* 3 */ Update("C", GlobalRowIdentifiers(Set(1, 2, 3, 4, 5, 6)), lit(30)),   // anywhere
+                                                              ^
+INFO  /home/okennedy/Documents/Mimir/Vizual/src/test/scala/org/mimirdb/vizual/MakeUpdatesLazySpec.scala:44:66: stale bloop error: type mismatch;
+ found   : Int(5)
+ required: org.mimirdb.vizual.GlobalRowIdentifier
+        /* 3 */ Update("C", GlobalRowIdentifiers(Set(1, 2, 3, 4, 5, 6)), lit(30)),   // anywhere
+                                                                 ^
+INFO  /home/okennedy/Documents/Mimir/Vizual/src/test/scala/org/mimirdb/vizual/MakeUpdatesLazySpec.scala:44:69: stale bloop error: type mismatch;
+ found   : Int(6)
+ required: org.mimirdb.vizual.GlobalRowIdentifier
+        /* 3 */ Update("C", GlobalRowIdentifiers(Set(1, 2, 3, 4, 5, 6)), lit(30)),   // anywhere
+                                                                    ^
+INFO  /home/okennedy/Documents/Mimir/Vizual/src/test/scala/org/mimirdb/vizual/MakeUpdatesLazySpec.scala:45:54: stale bloop error: type mismatch;
+ found   : Int(7)
+ required: org.mimirdb.vizual.GlobalRowIdentifier
+        /* 4 */ Update("C", GlobalRowIdentifiers(Set(7)), col("A")), // after 5
+                                                     ^
+INFO  /home/okennedy/Documents/Mimir/Vizual/src/test/scala/org/mimirdb/vizual/MakeUpdatesLazySpec.scala:46:54: stale bloop error: type mismatch;
+ found   : Int(7)
+ required: org.mimirdb.vizual.GlobalRowIdentifier
+        /* 5 */ Update("A", GlobalRowIdentifiers(Set(7, 8, 9, 10)), lit(50))  // anywhere
+                                                     ^
+INFO  /home/okennedy/Documents/Mimir/Vizual/src/test/scala/org/mimirdb/vizual/MakeUpdatesLazySpec.scala:46:57: stale bloop error: type mismatch;
+ found   : Int(8)
+ required: org.mimirdb.vizual.GlobalRowIdentifier
+        /* 5 */ Update("A", GlobalRowIdentifiers(Set(7, 8, 9, 10)), lit(50))  // anywhere
+                                                        ^
+INFO  /home/okennedy/Documents/Mimir/Vizual/src/test/scala/org/mimirdb/vizual/MakeUpdatesLazySpec.scala:46:60: stale bloop error: type mismatch;
+ found   : Int(9)
+ required: org.mimirdb.vizual.GlobalRowIdentifier
+        /* 5 */ Update("A", GlobalRowIdentifiers(Set(7, 8, 9, 10)), lit(50))  // anywhere
+                                                           ^
+INFO  /home/okennedy/Documents/Mimir/Vizual/src/test/scala/org/mimirdb/vizual/MakeUpdatesLazySpec.scala:46:63: stale bloop error: type mismatch;
+ found   : Int(10)
+ required: org.mimirdb.vizual.GlobalRowIdentifier
+        /* 5 */ Update("A", GlobalRowIdentifiers(Set(7, 8, 9, 10)), lit(50))  // anywhere
+                                                              ^^
+INFO  /home/okennedy/Documents/Mimir/Vizual/src/test/scala/org/mimirdb/vizual/MakeUpdatesLazySpec.scala:42:54: stale bloop error: type mismatch;
+ found   : Int(1)
+ required: org.mimirdb.vizual.GlobalRowIdentifier
+        /* 1 */ Update("A", GlobalRowIdentifiers(Set(1, 2, 3, 4, 5)), col("B")),  // after 2
+                                                     ^
+INFO  /home/okennedy/Documents/Mimir/Vizual/src/test/scala/org/mimirdb/vizual/MakeUpdatesLazySpec.scala:42:57: stale bloop error: type mismatch;
+ found   : Int(2)
+ required: org.mimirdb.vizual.GlobalRowIdentifier
+        /* 1 */ Update("A", GlobalRowIdentifiers(Set(1, 2, 3, 4, 5)), col("B")),  // after 2
+                                                        ^
+INFO  /home/okennedy/Documents/Mimir/Vizual/src/test/scala/org/mimirdb/vizual/MakeUpdatesLazySpec.scala:42:60: stale bloop error: type mismatch;
+ found   : Int(3)
+ required: org.mimirdb.vizual.GlobalRowIdentifier
+        /* 1 */ Update("A", GlobalRowIdentifiers(Set(1, 2, 3, 4, 5)), col("B")),  // after 2
+                                                           ^
+INFO  /home/okennedy/Documents/Mimir/Vizual/src/test/scala/org/mimirdb/vizual/MakeUpdatesLazySpec.scala:42:63: stale bloop error: type mismatch;
+ found   : Int(4)
+ required: org.mimirdb.vizual.GlobalRowIdentifier
+        /* 1 */ Update("A", GlobalRowIdentifiers(Set(1, 2, 3, 4, 5)), col("B")),  // after 2
+                                                              ^
+INFO  /home/okennedy/Documents/Mimir/Vizual/src/test/scala/org/mimirdb/vizual/MakeUpdatesLazySpec.scala:42:66: stale bloop error: type mismatch;
+ found   : Int(5)
+ required: org.mimirdb.vizual.GlobalRowIdentifier
+        /* 1 */ Update("A", GlobalRowIdentifiers(Set(1, 2, 3, 4, 5)), col("B")),  // after 2
+                                                                 ^
+INFO  /home/okennedy/Documents/Mimir/Vizual/src/test/scala/org/mimirdb/vizual/MakeUpdatesLazySpec.scala:43:54: stale bloop error: type mismatch;
+ found   : Int(1)
+ required: org.mimirdb.vizual.GlobalRowIdentifier
+        /* 2 */ Update("B", GlobalRowIdentifiers(Set(1, 2, 3, 4, 5, 6, 7)), col("C")),  // after 3, 4
+                                                     ^
+INFO  /home/okennedy/Documents/Mimir/Vizual/src/test/scala/org/mimirdb/vizual/MakeUpdatesLazySpec.scala:43:57: stale bloop error: type mismatch;
+ found   : Int(2)
+ required: org.mimirdb.vizual.GlobalRowIdentifier
+        /* 2 */ Update("B", GlobalRowIdentifiers(Set(1, 2, 3, 4, 5, 6, 7)), col("C")),  // after 3, 4
+                                                        ^
+INFO  /home/okennedy/Documents/Mimir/Vizual/src/test/scala/org/mimirdb/vizual/MakeUpdatesLazySpec.scala:43:60: stale bloop error: type mismatch;
+ found   : Int(3)
+ required: org.mimirdb.vizual.GlobalRowIdentifier
+        /* 2 */ Update("B", GlobalRowIdentifiers(Set(1, 2, 3, 4, 5, 6, 7)), col("C")),  // after 3, 4
+                                                           ^
+INFO  /home/okennedy/Documents/Mimir/Vizual/src/test/scala/org/mimirdb/vizual/MakeUpdatesLazySpec.scala:43:63: stale bloop error: type mismatch;
+ found   : Int(4)
+ required: org.mimirdb.vizual.GlobalRowIdentifier
+        /* 2 */ Update("B", GlobalRowIdentifiers(Set(1, 2, 3, 4, 5, 6, 7)), col("C")),  // after 3, 4
+                                                              ^
+INFO  /home/okennedy/Documents/Mimir/Vizual/src/test/scala/org/mimirdb/vizual/MakeUpdatesLazySpec.scala:43:66: stale bloop error: type mismatch;
+ found   : Int(5)
+ required: org.mimirdb.vizual.GlobalRowIdentifier
+        /* 2 */ Update("B", GlobalRowIdentifiers(Set(1, 2, 3, 4, 5, 6, 7)), col("C")),  // after 3, 4
+                                                                 ^
+INFO  /home/okennedy/Documents/Mimir/Vizual/src/test/scala/org/mimirdb/vizual/MakeUpdatesLazySpec.scala:43:69: stale bloop error: type mismatch;
+ found   : Int(6)
+ required: org.mimirdb.vizual.GlobalRowIdentifier
+        /* 2 */ Update("B", GlobalRowIdentifiers(Set(1, 2, 3, 4, 5, 6, 7)), col("C")),  // after 3, 4
+                                                                    ^
+INFO  /home/okennedy/Documents/Mimir/Vizual/src/test/scala/org/mimirdb/vizual/MakeUpdatesLazySpec.scala:43:72: stale bloop error: type mismatch;
+ found   : Int(7)
+ required: org.mimirdb.vizual.GlobalRowIdentifier
+        /* 2 */ Update("B", GlobalRowIdentifiers(Set(1, 2, 3, 4, 5, 6, 7)), col("C")),  // after 3, 4
+                                                                       ^
+INFO  /home/okennedy/Documents/Mimir/Vizual/src/test/scala/org/mimirdb/vizual/MakeUpdatesLazySpec.scala:44:54: stale bloop error: type mismatch;
+ found   : Int(1)
+ required: org.mimirdb.vizual.GlobalRowIdentifier
+        /* 3 */ Update("C", GlobalRowIdentifiers(Set(1, 2, 3, 4, 5, 6)), lit(30)),   // anywhere
+                                                     ^
+INFO  /home/okennedy/Documents/Mimir/Vizual/src/test/scala/org/mimirdb/vizual/MakeUpdatesLazySpec.scala:44:57: stale bloop error: type mismatch;
+ found   : Int(2)
+ required: org.mimirdb.vizual.GlobalRowIdentifier
+        /* 3 */ Update("C", GlobalRowIdentifiers(Set(1, 2, 3, 4, 5, 6)), lit(30)),   // anywhere
+                                                        ^
+INFO  /home/okennedy/Documents/Mimir/Vizual/src/test/scala/org/mimirdb/vizual/MakeUpdatesLazySpec.scala:44:60: stale bloop error: type mismatch;
+ found   : Int(3)
+ required: org.mimirdb.vizual.GlobalRowIdentifier
+        /* 3 */ Update("C", GlobalRowIdentifiers(Set(1, 2, 3, 4, 5, 6)), lit(30)),   // anywhere
+                                                           ^
+INFO  /home/okennedy/Documents/Mimir/Vizual/src/test/scala/org/mimirdb/vizual/MakeUpdatesLazySpec.scala:44:63: stale bloop error: type mismatch;
+ found   : Int(4)
+ required: org.mimirdb.vizual.GlobalRowIdentifier
+        /* 3 */ Update("C", GlobalRowIdentifiers(Set(1, 2, 3, 4, 5, 6)), lit(30)),   // anywhere
+                                                              ^
+INFO  /home/okennedy/Documents/Mimir/Vizual/src/test/scala/org/mimirdb/vizual/MakeUpdatesLazySpec.scala:44:66: stale bloop error: type mismatch;
+ found   : Int(5)
+ required: org.mimirdb.vizual.GlobalRowIdentifier
+        /* 3 */ Update("C", GlobalRowIdentifiers(Set(1, 2, 3, 4, 5, 6)), lit(30)),   // anywhere
+                                                                 ^
+INFO  /home/okennedy/Documents/Mimir/Vizual/src/test/scala/org/mimirdb/vizual/MakeUpdatesLazySpec.scala:44:69: stale bloop error: type mismatch;
+ found   : Int(6)
+ required: org.mimirdb.vizual.GlobalRowIdentifier
+        /* 3 */ Update("C", GlobalRowIdentifiers(Set(1, 2, 3, 4, 5, 6)), lit(30)),   // anywhere
+                                                                    ^
+INFO  /home/okennedy/Documents/Mimir/Vizual/src/test/scala/org/mimirdb/vizual/MakeUpdatesLazySpec.scala:45:54: stale bloop error: type mismatch;
+ found   : Int(7)
+ required: org.mimirdb.vizual.GlobalRowIdentifier
+        /* 4 */ Update("C", GlobalRowIdentifiers(Set(7)), col("A")), // after 5
+                                                     ^
+INFO  /home/okennedy/Documents/Mimir/Vizual/src/test/scala/org/mimirdb/vizual/MakeUpdatesLazySpec.scala:46:54: stale bloop error: type mismatch;
+ found   : Int(7)
+ required: org.mimirdb.vizual.GlobalRowIdentifier
+        /* 5 */ Update("A", GlobalRowIdentifiers(Set(7, 8, 9, 10)), lit(50))  // anywhere
+                                                     ^
+INFO  /home/okennedy/Documents/Mimir/Vizual/src/test/scala/org/mimirdb/vizual/MakeUpdatesLazySpec.scala:46:57: stale bloop error: type mismatch;
+ found   : Int(8)
+ required: org.mimirdb.vizual.GlobalRowIdentifier
+        /* 5 */ Update("A", GlobalRowIdentifiers(Set(7, 8, 9, 10)), lit(50))  // anywhere
+                                                        ^
+INFO  /home/okennedy/Documents/Mimir/Vizual/src/test/scala/org/mimirdb/vizual/MakeUpdatesLazySpec.scala:46:60: stale bloop error: type mismatch;
+ found   : Int(9)
+ required: org.mimirdb.vizual.GlobalRowIdentifier
+        /* 5 */ Update("A", GlobalRowIdentifiers(Set(7, 8, 9, 10)), lit(50))  // anywhere
+                                                           ^
+INFO  /home/okennedy/Documents/Mimir/Vizual/src/test/scala/org/mimirdb/vizual/MakeUpdatesLazySpec.scala:46:63: stale bloop error: type mismatch;
+ found   : Int(10)
+ required: org.mimirdb.vizual.GlobalRowIdentifier
+        /* 5 */ Update("A", GlobalRowIdentifiers(Set(7, 8, 9, 10)), lit(50))  // anywhere
+                                                              ^^
+INFO  compiling vizual-test (4 scala sources)
+INFO  time: compiled vizual-test in 0.37s
+INFO  compiling vizual-test (4 scala sources)
+INFO  time: compiled vizual-test in 0.31s
+INFO  compiling vizual-test (4 scala sources)
+INFO  time: compiled vizual-test in 0.32s
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 0.94s
+INFO  compiling vizual (2 scala sources)
+INFO  time: compiled vizual in 1.52s
+INFO  compiling vizual-test (4 scala sources)
+INFO  time: compiled vizual-test in 0.34s
+INFO  compiling vizual-test (4 scala sources)
+INFO  time: compiled vizual-test in 0.31s
+INFO  compiling vizual-test (4 scala sources)
+INFO  time: compiled vizual-test in 0.37s
+INFO  compiling vizual-test (4 scala sources)
+INFO  time: compiled vizual-test in 0.32s
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 1.19s
+INFO  compiling vizual (2 scala sources)
+INFO  time: compiled vizual in 0.65s
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 0.92s
+INFO  compiling vizual (2 scala sources)
+INFO  time: compiled vizual in 1.49s
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 0.29s
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 0.98s
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 0.28s
+INFO  compiling vizual (2 scala sources)
+INFO  time: compiled vizual in 1.13s
+INFO  compiling vizual-test (4 scala sources)
+INFO  time: compiled vizual-test in 0.32s
+INFO  compiling vizual-test (4 scala sources)
+INFO  time: compiled vizual-test in 0.32s
+INFO  /home/okennedy/Documents/Mimir/Vizual/src/test/scala/org/mimirdb/vizual/VizualSpec.scala:19:7: stale bloop error: overloaded method value insertRow with alternatives:
+  (position: Long)org.mimirdb.vizual.Script <and>
+  ()org.mimirdb.vizual.Script
+ cannot be applied to (values: scala.collection.immutable.Map[String,org.apache.spark.sql.catalyst.expressions.Literal])
+> Vizual.script
+>     /* 1 */ .insertColumn( "double", value = col("id") * 2 )
+>     /* 2 */ .deleteRows( GlobalRowIdentifiers.ofSource(0, 1, 2, 3, 4, 5, 6, 7, 8, 9) )
+>     /* 3 */ .insertRow
+INFO  /home/okennedy/Documents/Mimir/Vizual/src/test/scala/org/mimirdb/vizual/VizualSpec.scala:19:7: stale bloop error: overloaded method value insertRow with alternatives:
+  (position: Long)org.mimirdb.vizual.Script <and>
+  ()org.mimirdb.vizual.Script
+ cannot be applied to (values: scala.collection.immutable.Map[String,org.apache.spark.sql.catalyst.expressions.Literal])
+> Vizual.script
+>     /* 1 */ .insertColumn( "double", value = col("id") * 2 )
+>     /* 2 */ .deleteRows( GlobalRowIdentifiers.ofSource(0, 1, 2, 3, 4, 5, 6, 7, 8, 9) )
+>     /* 3 */ .insertRow
+INFO  /home/okennedy/Documents/Mimir/Vizual/src/test/scala/org/mimirdb/vizual/VizualSpec.scala:19:7: stale bloop error: overloaded method value insertRow with alternatives:
+  (position: Long)org.mimirdb.vizual.Script <and>
+  ()org.mimirdb.vizual.Script
+ cannot be applied to (values: scala.collection.immutable.Map[String,org.apache.spark.sql.catalyst.expressions.Literal])
+> Vizual.script
+>     /* 1 */ .insertColumn( "double", value = col("id") * 2 )
+>     /* 2 */ .deleteRows( GlobalRowIdentifiers.ofSource(0, 1, 2, 3, 4, 5, 6, 7, 8, 9) )
+>     /* 3 */ .insertRow
+INFO  /home/okennedy/Documents/Mimir/Vizual/src/test/scala/org/mimirdb/vizual/VizualSpec.scala:19:7: stale bloop error: overloaded method value insertRow with alternatives:
+  (position: Long)org.mimirdb.vizual.Script <and>
+  ()org.mimirdb.vizual.Script
+ cannot be applied to (values: scala.collection.immutable.Map[String,org.apache.spark.sql.catalyst.expressions.Literal])
+> Vizual.script
+>     /* 1 */ .insertColumn( "double", value = col("id") * 2 )
+>     /* 2 */ .deleteRows( GlobalRowIdentifiers.ofSource(0, 1, 2, 3, 4, 5, 6, 7, 8, 9) )
+>     /* 3 */ .insertRow
+INFO  /home/okennedy/Documents/Mimir/Vizual/src/test/scala/org/mimirdb/vizual/VizualSpec.scala:19:7: stale bloop error: overloaded method value insertRow with alternatives:
+  (position: Long)org.mimirdb.vizual.Script <and>
+  ()org.mimirdb.vizual.Script
+ cannot be applied to (values: scala.collection.immutable.Map[String,org.apache.spark.sql.catalyst.expressions.Literal])
+> Vizual.script
+>     /* 1 */ .insertColumn( "double", value = col("id") * 2 )
+>     /* 2 */ .deleteRows( GlobalRowIdentifiers.ofSource(0, 1, 2, 3, 4, 5, 6, 7, 8, 9) )
+>     /* 3 */ .insertRow
+INFO  /home/okennedy/Documents/Mimir/Vizual/src/test/scala/org/mimirdb/vizual/VizualSpec.scala:19:7: stale bloop error: overloaded method value insertRow with alternatives:
+  (position: Long)org.mimirdb.vizual.Script <and>
+  ()org.mimirdb.vizual.Script
+ cannot be applied to (values: scala.collection.immutable.Map[String,org.apache.spark.sql.catalyst.expressions.Literal])
+> Vizual.script
+>     /* 1 */ .insertColumn( "double", value = col("id") * 2 )
+>     /* 2 */ .deleteRows( GlobalRowIdentifiers.ofSource(0, 1, 2, 3, 4, 5, 6, 7, 8, 9) )
+>     /* 3 */ .insertRow
+INFO  compiling vizual-test (4 scala sources)
+INFO  time: compiled vizual-test in 0.3s
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 0.2s
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 0.22s
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 0.21s
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 0.21s
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 0.85s
+INFO  compiling vizual-test (4 scala sources)
+INFO  time: compiled vizual-test in 0.33s
+INFO  compiling vizual-test (4 scala sources)
+INFO  time: compiled vizual-test in 0.36s
+INFO  disconnected: build server
+No more data in the client stdin, exiting...
+No more data in the server stdin, exiting...
+No more data in the server stdin, exiting...
+Starting the bsp launcher for bloop...
+Opening a bsp server connection with 'bsp --protocol local --socket /tmp/bsp-launcher8746521118605332510/bsp.socket'...
+Waiting for the bsp connection to come up...
+[0m[32m[D][0m Loading workspace settings from bloop.settings.json
+[0m[32m[D][0m Waiting for a connection at local:///tmp/bsp-launcher8746521118605332510/bsp.socket...
+The server is listening for incoming connections at local:///tmp/bsp-launcher8746521118605332510/bsp.socket...
+Starting thread that pumps stdin and redirects it to the bsp server...
+Starting thread that pumps server stdout and redirects it to the client stdout...
+INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/okennedy/.cache/metals/bsp.trace.json
+INFO  Connected to Build server v1.4.0-RC1-190-ef7d8dba
+WARN  Could not find java sources in None. Java symbols will not be available.
+INFO  time: indexed workspace in 1.18s
+INFO  compiling vizual-test (4 scala sources)
+INFO  time: compiled vizual-test in 0.32s
+INFO  compiling vizual-test (4 scala sources)
+INFO  time: compiled vizual-test in 1.63s
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 0.24s
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 0.26s
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 0.29s
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 0.3s
+INFO  compiling vizual (1 scala source)
+WARN  there was one deprecation warning (since 2.12.0); re-run with -deprecation for details
+INFO  time: compiled vizual in 1.02s
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 0.27s
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 0.24s
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 0.24s
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 0.27s
+INFO  compiling vizual (2 scala sources)
+INFO  time: compiled vizual in 0.26s
+INFO  compiling vizual (2 scala sources)
+INFO  time: compiled vizual in 0.25s
+INFO  /home/okennedy/Documents/Mimir/Vizual/src/main/scala/org/mimirdb/rowids/MergeRowIds.scala:20:12: stale bloop error: scrutinee is incompatible with pattern type;
+ found   : Seq[A]
+ required: Long
+      case Seq() => 1l
+           ^^^^^
+INFO  /home/okennedy/Documents/Mimir/Vizual/src/main/scala/org/mimirdb/rowids/MergeRowIds.scala:21:12: stale bloop error: scrutinee is incompatible with pattern type;
+ found   : Seq[A]
+ required: Long
+      case Seq(singleton) => singleton
+           ^^^^^^^^^^^^^^
+INFO  /home/okennedy/Documents/Mimir/Vizual/src/main/scala/org/mimirdb/rowids/MergeRowIds.scala:22:14: stale bloop error: type mismatch;
+ found   : Unit
+ required: Long
+      case _ => 
+             ^^
+INFO  /home/okennedy/Documents/Mimir/Vizual/src/main/scala/org/mimirdb/rowids/MergeRowIds.scala:20:12: stale bloop error: scrutinee is incompatible with pattern type;
+ found   : Seq[A]
+ required: Long
+      case Seq() => 1l
+           ^^^^^
+INFO  /home/okennedy/Documents/Mimir/Vizual/src/main/scala/org/mimirdb/rowids/MergeRowIds.scala:21:12: stale bloop error: scrutinee is incompatible with pattern type;
+ found   : Seq[A]
+ required: Long
+      case Seq(singleton) => singleton
+           ^^^^^^^^^^^^^^
+INFO  /home/okennedy/Documents/Mimir/Vizual/src/main/scala/org/mimirdb/rowids/MergeRowIds.scala:22:14: stale bloop error: type mismatch;
+ found   : Unit
+ required: Long
+      case _ => 
+             ^^
+INFO  compiling vizual (2 scala sources)
+INFO  time: compiled vizual in 0.31s
+INFO  compiling vizual (2 scala sources)
+INFO  time: compiled vizual in 0.28s
+INFO  compiling vizual (2 scala sources)
+INFO  time: compiled vizual in 0.28s
+INFO  compiling vizual (3 scala sources)
+INFO  time: compiled vizual in 0.36s
+INFO  compiling vizual (3 scala sources)
+INFO  time: compiled vizual in 0.4s
+INFO  compiling vizual (3 scala sources)
+INFO  time: compiled vizual in 0.37s
+INFO  compiling vizual (3 scala sources)
+INFO  time: compiled vizual in 0.38s
+INFO  compiling vizual (3 scala sources)
+INFO  time: compiled vizual in 0.4s
+INFO  compiling vizual (3 scala sources)
+INFO  time: compiled vizual in 0.36s
+INFO  compiling vizual (3 scala sources)
+INFO  time: compiled vizual in 0.4s
+INFO  compiling vizual (3 scala sources)
+INFO  time: compiled vizual in 0.36s
+INFO  compiling vizual (3 scala sources)
+INFO  time: compiled vizual in 0.4s
+INFO  compiling vizual (3 scala sources)
+WARN  there was one deprecation warning (since 2.12.0); re-run with -deprecation for details
+INFO  time: compiled vizual in 1.43s
+INFO  compiling vizual (1 scala source)
+WARN  there was one deprecation warning (since 2.12.0); re-run with -deprecation for details
+INFO  time: compiled vizual in 1.03s
+INFO  compiling vizual (1 scala source)
+WARN  there was one deprecation warning (since 2.12.0); re-run with -deprecation for details
+INFO  time: compiled vizual in 1.06s
+INFO  compiling vizual (1 scala source)
+WARN  there was one deprecation warning (since 2.12.0); re-run with -deprecation for details
+INFO  time: compiled vizual in 1.03s
+May 07, 2020 8:33:18 PM scala.meta.internal.pc.completions.Completions completionPosition
+SEVERE: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.MetalsGlobal.metalsSeenFromType(MetalsGlobal.scala:643)
+	at scala.meta.internal.pc.completions.MatchCaseCompletions$CaseKeywordCompletion.<init>(MatchCaseCompletions.scala:47)
+	at scala.meta.internal.pc.completions.Completions.fromIdentApply$1(Completions.scala:416)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:436)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:402)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:25)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:394)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:379)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:25)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:416)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:53)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:94)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:122)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:79)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:200)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:101)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+May 07, 2020 8:33:18 PM scala.meta.internal.pc.completions.Completions completionPosition
+SEVERE: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.MetalsGlobal.metalsSeenFromType(MetalsGlobal.scala:643)
+	at scala.meta.internal.pc.completions.MatchCaseCompletions$CaseKeywordCompletion.<init>(MatchCaseCompletions.scala:47)
+	at scala.meta.internal.pc.completions.Completions.fromIdentApply$1(Completions.scala:416)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:436)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:402)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:25)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:394)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:379)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:25)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:416)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:53)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:94)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:122)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:79)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:200)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:101)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+May 07, 2020 8:33:37 PM scala.meta.internal.pc.completions.Completions completionPosition
+SEVERE: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.MetalsGlobal.metalsSeenFromType(MetalsGlobal.scala:643)
+	at scala.meta.internal.pc.completions.MatchCaseCompletions$CaseKeywordCompletion.<init>(MatchCaseCompletions.scala:47)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:480)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:402)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:25)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:394)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:379)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:25)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:416)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:53)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:94)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:122)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:79)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:200)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:101)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+May 07, 2020 8:33:37 PM scala.meta.internal.pc.completions.Completions completionPosition
+SEVERE: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.MetalsGlobal.metalsSeenFromType(MetalsGlobal.scala:643)
+	at scala.meta.internal.pc.completions.MatchCaseCompletions$CaseKeywordCompletion.<init>(MatchCaseCompletions.scala:47)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:480)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:402)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:25)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:394)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:379)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:25)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:416)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:53)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:94)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:122)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:79)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:200)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:101)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+May 07, 2020 8:33:41 PM scala.meta.internal.pc.completions.Completions completionPosition
+SEVERE: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.MetalsGlobal.metalsSeenFromType(MetalsGlobal.scala:643)
+	at scala.meta.internal.pc.completions.MatchCaseCompletions$CaseKeywordCompletion.<init>(MatchCaseCompletions.scala:47)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:480)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:402)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:25)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:394)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:379)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:25)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:416)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:53)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:94)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:122)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:79)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:200)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:101)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+May 07, 2020 8:33:42 PM scala.meta.internal.pc.completions.Completions completionPosition
+SEVERE: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.MetalsGlobal.metalsSeenFromType(MetalsGlobal.scala:643)
+	at scala.meta.internal.pc.completions.MatchCaseCompletions$CaseKeywordCompletion.<init>(MatchCaseCompletions.scala:47)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:480)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:402)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:25)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:394)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:379)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:25)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:416)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:53)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:94)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:122)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:79)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:200)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:101)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+May 07, 2020 8:33:42 PM scala.meta.internal.pc.completions.Completions completionPosition
+SEVERE: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.MetalsGlobal.metalsSeenFromType(MetalsGlobal.scala:643)
+	at scala.meta.internal.pc.completions.MatchCaseCompletions$CaseKeywordCompletion.<init>(MatchCaseCompletions.scala:47)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:480)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:402)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:25)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:394)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:379)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:25)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:416)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:53)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:94)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:122)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:79)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:200)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:101)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+May 07, 2020 8:33:42 PM scala.meta.internal.pc.completions.Completions completionPosition
+SEVERE: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.MetalsGlobal.metalsSeenFromType(MetalsGlobal.scala:643)
+	at scala.meta.internal.pc.completions.MatchCaseCompletions$CaseKeywordCompletion.<init>(MatchCaseCompletions.scala:47)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:480)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:402)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:25)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:394)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:379)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:25)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:416)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:53)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:94)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:122)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:79)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:200)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:101)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+May 07, 2020 8:33:53 PM scala.meta.internal.pc.completions.Completions completionPosition
+SEVERE: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.completions.MatchCaseCompletions$Parents.<init>(MatchCaseCompletions.scala:393)
+	at scala.meta.internal.pc.completions.MatchCaseCompletions$Parents.<init>(MatchCaseCompletions.scala:384)
+	at scala.meta.internal.pc.completions.MatchCaseCompletions$CaseKeywordCompletion.<init>(MatchCaseCompletions.scala:64)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:480)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:402)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:25)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:394)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:379)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:25)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:416)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:53)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:94)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:122)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:79)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:200)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:101)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+May 07, 2020 8:33:53 PM scala.meta.internal.pc.completions.Completions completionPosition
+SEVERE: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.completions.MatchCaseCompletions$Parents.<init>(MatchCaseCompletions.scala:393)
+	at scala.meta.internal.pc.completions.MatchCaseCompletions$Parents.<init>(MatchCaseCompletions.scala:384)
+	at scala.meta.internal.pc.completions.MatchCaseCompletions$CaseKeywordCompletion.<init>(MatchCaseCompletions.scala:64)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:480)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:402)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:25)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:394)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:379)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:25)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:416)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:53)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:94)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:122)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:79)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:200)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:101)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+May 07, 2020 8:33:55 PM scala.meta.internal.pc.completions.Completions completionPosition
+SEVERE: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.completions.MatchCaseCompletions$Parents.<init>(MatchCaseCompletions.scala:393)
+	at scala.meta.internal.pc.completions.MatchCaseCompletions$Parents.<init>(MatchCaseCompletions.scala:384)
+	at scala.meta.internal.pc.completions.MatchCaseCompletions$CasePatternCompletion.<init>(MatchCaseCompletions.scala:264)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:440)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:402)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:25)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:394)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:379)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:25)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:416)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:53)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:94)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:122)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:79)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:200)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:101)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+May 07, 2020 8:33:56 PM scala.meta.internal.pc.completions.Completions completionPosition
+SEVERE: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.completions.MatchCaseCompletions$Parents.<init>(MatchCaseCompletions.scala:393)
+	at scala.meta.internal.pc.completions.MatchCaseCompletions$Parents.<init>(MatchCaseCompletions.scala:384)
+	at scala.meta.internal.pc.completions.MatchCaseCompletions$CasePatternCompletion.<init>(MatchCaseCompletions.scala:264)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:440)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:402)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:25)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:394)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:379)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:25)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:416)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:53)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:94)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:122)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:79)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:200)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:101)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+May 07, 2020 8:33:56 PM scala.meta.internal.pc.completions.Completions completionPosition
+SEVERE: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.completions.MatchCaseCompletions$Parents.<init>(MatchCaseCompletions.scala:393)
+	at scala.meta.internal.pc.completions.MatchCaseCompletions$Parents.<init>(MatchCaseCompletions.scala:384)
+	at scala.meta.internal.pc.completions.MatchCaseCompletions$CasePatternCompletion.<init>(MatchCaseCompletions.scala:264)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:440)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:402)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:25)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:394)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:379)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:25)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:416)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:53)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:94)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:122)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:79)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:200)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:101)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+May 07, 2020 8:35:42 PM scala.meta.internal.pc.completions.Completions completionPosition
+SEVERE: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.completions.MatchCaseCompletions$Parents.<init>(MatchCaseCompletions.scala:393)
+	at scala.meta.internal.pc.completions.MatchCaseCompletions$Parents.<init>(MatchCaseCompletions.scala:384)
+	at scala.meta.internal.pc.completions.MatchCaseCompletions$CaseKeywordCompletion.<init>(MatchCaseCompletions.scala:64)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:480)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:402)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:25)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:394)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:379)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:25)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:416)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:53)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:94)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:122)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:79)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:200)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:101)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+May 07, 2020 8:35:42 PM scala.meta.internal.pc.completions.Completions completionPosition
+SEVERE: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.completions.MatchCaseCompletions$Parents.<init>(MatchCaseCompletions.scala:393)
+	at scala.meta.internal.pc.completions.MatchCaseCompletions$Parents.<init>(MatchCaseCompletions.scala:384)
+	at scala.meta.internal.pc.completions.MatchCaseCompletions$CaseKeywordCompletion.<init>(MatchCaseCompletions.scala:64)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:480)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:402)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:25)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:394)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:379)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:25)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:416)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:53)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:94)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:122)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:79)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:200)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:101)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+May 07, 2020 8:35:42 PM scala.meta.internal.pc.completions.Completions completionPosition
+SEVERE: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.completions.MatchCaseCompletions$Parents.<init>(MatchCaseCompletions.scala:393)
+	at scala.meta.internal.pc.completions.MatchCaseCompletions$Parents.<init>(MatchCaseCompletions.scala:384)
+	at scala.meta.internal.pc.completions.MatchCaseCompletions$CaseKeywordCompletion.<init>(MatchCaseCompletions.scala:64)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:480)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:402)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:25)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:394)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:379)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:25)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:416)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:53)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:94)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:122)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:79)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:200)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:101)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 0.28s
+INFO  compiling vizual (1 scala source)
+WARN  there was one deprecation warning (since 2.12.0); re-run with -deprecation for details
+INFO  time: compiled vizual in 1.11s
+May 07, 2020 8:36:04 PM scala.meta.internal.pc.completions.Completions completionPosition
+SEVERE: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.completions.MatchCaseCompletions$Parents.<init>(MatchCaseCompletions.scala:393)
+	at scala.meta.internal.pc.completions.MatchCaseCompletions$Parents.<init>(MatchCaseCompletions.scala:384)
+	at scala.meta.internal.pc.completions.MatchCaseCompletions$CaseKeywordCompletion.<init>(MatchCaseCompletions.scala:64)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:480)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:402)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:25)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:394)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:379)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:25)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:416)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:53)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:94)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:122)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:79)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:200)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:101)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+May 07, 2020 8:36:04 PM scala.meta.internal.pc.completions.Completions completionPosition
+SEVERE: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.completions.MatchCaseCompletions$Parents.<init>(MatchCaseCompletions.scala:393)
+	at scala.meta.internal.pc.completions.MatchCaseCompletions$Parents.<init>(MatchCaseCompletions.scala:384)
+	at scala.meta.internal.pc.completions.MatchCaseCompletions$CaseKeywordCompletion.<init>(MatchCaseCompletions.scala:64)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:480)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:402)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:25)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:394)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:379)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:25)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:416)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:53)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:94)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:122)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:79)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:200)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:101)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+May 07, 2020 8:36:10 PM scala.meta.internal.pc.completions.Completions completionPosition
+SEVERE: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.completions.MatchCaseCompletions$Parents.<init>(MatchCaseCompletions.scala:393)
+	at scala.meta.internal.pc.completions.MatchCaseCompletions$Parents.<init>(MatchCaseCompletions.scala:384)
+	at scala.meta.internal.pc.completions.MatchCaseCompletions$CaseKeywordCompletion.<init>(MatchCaseCompletions.scala:64)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:480)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:402)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:25)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:394)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:379)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:25)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:416)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:53)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:94)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:122)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:79)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:200)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:101)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+May 07, 2020 8:36:10 PM scala.meta.internal.pc.completions.Completions completionPosition
+SEVERE: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.completions.MatchCaseCompletions$Parents.<init>(MatchCaseCompletions.scala:393)
+	at scala.meta.internal.pc.completions.MatchCaseCompletions$Parents.<init>(MatchCaseCompletions.scala:384)
+	at scala.meta.internal.pc.completions.MatchCaseCompletions$CaseKeywordCompletion.<init>(MatchCaseCompletions.scala:64)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:480)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:402)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:25)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:394)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:379)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:25)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:416)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:53)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:94)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:122)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:79)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:200)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:101)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+May 07, 2020 8:36:12 PM scala.meta.internal.pc.completions.Completions completionPosition
+SEVERE: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.completions.MatchCaseCompletions$Parents.<init>(MatchCaseCompletions.scala:393)
+	at scala.meta.internal.pc.completions.MatchCaseCompletions$Parents.<init>(MatchCaseCompletions.scala:384)
+	at scala.meta.internal.pc.completions.MatchCaseCompletions$CasePatternCompletion.<init>(MatchCaseCompletions.scala:264)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:440)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:402)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:25)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:394)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:379)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:25)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:416)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:53)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:94)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:122)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:79)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:200)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:101)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+May 07, 2020 8:36:12 PM scala.meta.internal.pc.completions.Completions completionPosition
+SEVERE: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.completions.MatchCaseCompletions$Parents.<init>(MatchCaseCompletions.scala:393)
+	at scala.meta.internal.pc.completions.MatchCaseCompletions$Parents.<init>(MatchCaseCompletions.scala:384)
+	at scala.meta.internal.pc.completions.MatchCaseCompletions$CasePatternCompletion.<init>(MatchCaseCompletions.scala:264)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:440)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:402)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:25)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:394)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:379)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:25)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:416)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:53)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:94)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:122)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:79)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:200)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:101)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+May 07, 2020 8:36:12 PM scala.meta.internal.pc.completions.Completions completionPosition
+SEVERE: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.completions.MatchCaseCompletions$Parents.<init>(MatchCaseCompletions.scala:393)
+	at scala.meta.internal.pc.completions.MatchCaseCompletions$Parents.<init>(MatchCaseCompletions.scala:384)
+	at scala.meta.internal.pc.completions.MatchCaseCompletions$CasePatternCompletion.<init>(MatchCaseCompletions.scala:264)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:440)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:402)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:25)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:394)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:379)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:25)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:416)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:53)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:94)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:122)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:79)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:200)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:101)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+May 07, 2020 8:36:12 PM scala.meta.internal.pc.completions.Completions completionPosition
+SEVERE: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.completions.MatchCaseCompletions$Parents.<init>(MatchCaseCompletions.scala:393)
+	at scala.meta.internal.pc.completions.MatchCaseCompletions$Parents.<init>(MatchCaseCompletions.scala:384)
+	at scala.meta.internal.pc.completions.MatchCaseCompletions$CasePatternCompletion.<init>(MatchCaseCompletions.scala:264)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:440)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:402)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:25)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:394)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:379)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:25)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:416)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:53)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:94)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:122)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:79)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:200)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:101)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 0.13s
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 0.17s
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 0.13s
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 0.13s
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 0.33s
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 1.39s
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 0.44s
+INFO  compiling vizual (1 scala source)
+INFO  time: compiled vizual in 0.14s
+May 07, 2020 9:12:45 PM scala.meta.internal.pc.completions.Completions completionPosition
+SEVERE: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.completions.MatchCaseCompletions$Parents.<init>(MatchCaseCompletions.scala:393)
+	at scala.meta.internal.pc.completions.MatchCaseCompletions$Parents.<init>(MatchCaseCompletions.scala:384)
+	at scala.meta.internal.pc.completions.MatchCaseCompletions$CaseKeywordCompletion.<init>(MatchCaseCompletions.scala:64)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:480)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:402)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:25)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:394)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:379)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:25)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:416)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:53)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:94)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:122)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:79)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:200)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:101)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+INFO  compiling vizual (1 scala source)
+WARN  there was one deprecation warning (since 2.12.0); re-run with -deprecation for details
+INFO  time: compiled vizual in 0.98s

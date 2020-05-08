@@ -4,13 +4,14 @@ import play.api.libs.json._
 
 import org.apache.spark.sql.{ Column, DataFrame }
 import org.apache.spark.sql.functions._
-import org.apache.spark.sql.catalyst.expressions.Attribute
+import org.apache.spark.sql.catalyst.expressions.{ Expression, Attribute }
 
 import org.mimirdb.rowids._
 import org.mimirdb.vizual.types._
 
 sealed trait Command
-sealed trait PrefixCommand extends Command
+sealed trait PreprocessCommand extends Command
+sealed trait PostprocessCommand extends Command
 
 object Command
 { 
@@ -56,7 +57,7 @@ object Command
  */
 case class DeleteColumn(
   column: String
-) extends Command
+) extends PostprocessCommand
 object DeleteColumn { implicit val format: Format[DeleteColumn] = Json.format }
 
 /**
@@ -66,7 +67,7 @@ object DeleteColumn { implicit val format: Format[DeleteColumn] = Json.format }
  */
 case class DeleteRows(
   rows: RowSelection // <- a set of row identities
-) extends PrefixCommand
+) extends Command
 object DeleteRows { implicit val format: Format[DeleteRows] = Json.format }
 
 /**
@@ -77,7 +78,7 @@ object DeleteRows { implicit val format: Format[DeleteRows] = Json.format }
 case class InsertColumn(
   column: String,
   position: Option[Int]
-) extends PrefixCommand
+) extends PreprocessCommand
 object InsertColumn { implicit val format: Format[InsertColumn] = Json.format }
 
 /**
@@ -112,7 +113,7 @@ object InsertRow { implicit val format: Format[InsertRow] = Json.format }
 case class MoveColumn(
   column: String,
   position: Int
-) extends PrefixCommand
+) extends PostprocessCommand
 object MoveColumn { implicit val format: Format[MoveColumn] = Json.format }
 
 /**
@@ -121,10 +122,28 @@ object MoveColumn { implicit val format: Format[MoveColumn] = Json.format }
 case class RenameColumn(
   column: String,
   newName: String
-) extends PrefixCommand
+) extends PreprocessCommand
 {
-  def rename(cmp: String) = { if(cmp.equalsIgnoreCase(column)) { newName } else { cmp } }
-  def rename(a: Attribute) = { if(a.name.equalsIgnoreCase(column)){ col(newName).expr } else { a } }
+  def rename(cmp: String): String = { if(cmp.equalsIgnoreCase(column)) { newName } else { cmp } }
+  def rename(a: Attribute): Expression = { if(a.name.equalsIgnoreCase(column)){ col(newName).expr } else { a } }
+  def rename(rows: RowSelection): RowSelection = 
+    rows match {
+      case _:GlobalRowIdentifiers => rows
+      case PositionRange(low, high, tag) => PositionRange(low, high, tag.map { rename(_) })
+      case _:AllRows => rows
+    }
+  def rename(cmd: Command): Command = 
+    cmd match {
+      case DeleteColumn(col) => DeleteColumn(rename(col))
+      case DeleteRows(rows) => DeleteRows(rename(rows))
+      case InsertColumn(col, pos) => InsertColumn(rename(col), pos)
+      case InsertRow(pos, tag, id) => InsertRow(pos, tag.map { rename(_) }, id)
+      case MoveColumn(col, pos) => MoveColumn(rename(col), pos)
+      case RenameColumn(col, repl) => RenameColumn(rename(col), repl)
+      case Sort(col, asc) => Sort(rename(col), asc)
+      case Update(col, rows, value) => Update(rename(col), rename(rows), new Column(value.expr.transform { case a:Attribute => rename(a) }))
+      case TagRowOrder(col, context) => TagRowOrder(rename(col), context)
+    }
 }
 object RenameColumn { implicit val format: Format[RenameColumn] = Json.format }
 
@@ -138,9 +157,8 @@ object RenameColumn { implicit val format: Format[RenameColumn] = Json.format }
  */
 case class Sort(
   column: String,
-  ascending: Boolean = true,
-  virtualUpdates: Seq[Update] = Seq()
-) extends PrefixCommand
+  ascending: Boolean = true
+) extends Command
 {
   def sortDataFrame(df: DataFrame) = 
     df.orderBy {
@@ -172,5 +190,6 @@ object Update { implicit val format: Format[Update] = Json.format }
  */
 case class TagRowOrder(
   column: String,
-) extends PrefixCommand
+  context: Seq[Command]
+) extends Command
 object TagRowOrder { implicit val format: Format[TagRowOrder] = Json.format }

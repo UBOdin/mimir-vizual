@@ -17,12 +17,10 @@ object Vizual
 
   def apply(script: Seq[Command], input: DataFrame) = 
   {
-    val normalized = Normalize(script)
-
-    normalized.transformUpdates { MakeUpdatesLazy(_) }
+    val normalized = Normalize(script, input.schema)
 
     /////////////////// Evaluate ////////////////////////
-    native(normalized.commands, input)
+    // native(normalized.commands, input)
   }
 
   def simplify(script: Seq[Command]): Seq[Command] =
@@ -117,7 +115,7 @@ object Vizual
             }:_*
           )
         }
-        case TagRowOrder(tag) => ???
+        case TagRowOrder(tag, virtualUpdates) => ???
       }
     }
     logger.debug("==== Input DataFrame ====\n"+input.queryExecution.analyzed.treeString)
