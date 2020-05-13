@@ -17,7 +17,7 @@ class CellExpressionSpec
       StructField("C", IntegerType),
     ))
 
-  "A test case" >> {
-    ok
+  "Evaluate Constant Expressions" >> {
+    CellExpression()
   }
 }
