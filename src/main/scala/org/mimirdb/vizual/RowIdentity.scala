@@ -44,10 +44,13 @@ object RowIdentity
  */
 case class SourceRowIdentifier(source: Long) extends GlobalRowIdentifier
 {
-  def toLong: Long = MergeRowIds.literals(source, 1l)
+  def toLong: Long = SourceRowIdentifier.convert(source)
   def toJson = Json.toJson(this)
 }
-object SourceRowIdentifier { implicit val format: Format[SourceRowIdentifier] = Json.format }
+object SourceRowIdentifier { 
+  implicit val format: Format[SourceRowIdentifier] = Json.format 
+  def convert(x: Long) = MergeRowIds.literals(x, 1l)
+}
 
 /**
  * Identifies a row inserted this session by the index of the insert command (0 is the first
@@ -55,10 +58,13 @@ object SourceRowIdentifier { implicit val format: Format[SourceRowIdentifier] = 
  */
 case class InsertedRowIdentifier(inserted: Long) extends GlobalRowIdentifier
 { 
-  def toLong: Long = MergeRowIds.literals(inserted, 2l)
+  def toLong: Long = InsertedRowIdentifier.convert(inserted)
   def toJson = Json.toJson(this) 
 }
-object InsertedRowIdentifier { implicit val format: Format[InsertedRowIdentifier] = Json.format }
+object InsertedRowIdentifier { 
+  implicit val format: Format[InsertedRowIdentifier] = Json.format 
+  def convert(x: Long) = MergeRowIds.literals(x, 2l)
+}
 
 
 /**

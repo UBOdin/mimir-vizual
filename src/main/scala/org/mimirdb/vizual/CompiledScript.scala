@@ -169,13 +169,27 @@ class CompiledScript(
             rows match {
               case AllRows() => value
               case _ => when(rows.predicate, value).otherwise(df(field))
-            }
+              }
           }
           case field => df(field)
         }:_*
       )
     }
-    ???
+
+    //////////////////////////// sort ////////////////////////////
+    // If we have a sort, then apply it
+    for(Sort(sortColumn, asc) <- sort){
+      val col = df(sortColumn)
+      df = df.sort(if(asc) { col.asc } else { col.desc })
+    }
+
+    //////////////////////////// outputs ////////////////////////////
+    // Finally project away unwanted columns
+    df = df.select(outputs.map { df(_) }:_*)
+
+    //////////////////////////// done ////////////////////////////
+    // Return the final result
+    return df
   }
 
   def ComputeTagRowMapping(context: Seq[Command], input: DataFrame, columnName: String): DataFrame =
