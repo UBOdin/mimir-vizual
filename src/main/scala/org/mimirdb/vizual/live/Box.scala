@@ -13,4 +13,18 @@ case class Box(
    */
   def intersects(other: Box) =
     column.equals(other.column) && !(rows & other.rows).isEmpty
+
+  def &(other: Box): Option[Box] =
+    if(column.equals(other.column)){
+      Some(Box(column, rows & other.rows))
+    } else { None }
+
+  def -(other: Box): Option[Box] =
+    if(column.equals(other.column)){
+      if(rows.subsetOf(other.rows)){ None }
+      else { Some(Box(column, rows -- other.rows)) }
+    } else { Some(this) }
+
+  def partitionWith(other: Box): (Option[Box], Option[Box], Option[Box]) =
+    (this - other, this & other, other - this)
 }
