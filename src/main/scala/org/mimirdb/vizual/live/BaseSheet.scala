@@ -98,11 +98,13 @@ object BaseSheet
 {
   def apply(schema: StructType): BaseSheet = apply(schema.fields)
   def apply(schema: StructType, rows: Int): BaseSheet = apply(schema.fields, rows)
+  def apply(schema: StructType, rows: Int, default:Any): BaseSheet = apply(schema.fields, rows, default)
   def apply(fields: Seq[StructField]): BaseSheet = apply(fields, 1)
-  def apply(fields: Seq[StructField], rows: Int): BaseSheet = 
+  def apply(fields: Seq[StructField], rows: Int): BaseSheet = apply(fields, rows, null)
+  def apply(fields: Seq[StructField], rows: Int, default:Any): BaseSheet = 
   {
     new BaseSheet(
-      Buffer.range(0, rows).map { id => (fields.map { _ => null:Any }, id.toLong) },
+      Buffer.range(0, rows).map { id => (fields.map { _ => default }, id.toLong) },
       fields
     )
   }

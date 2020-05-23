@@ -12,6 +12,10 @@ abstract class ReferenceFrame
       other.position(rowid(pos))
     }
   }
+
+  def offset(rowid: Long, offset: Int): Long =
+    this.rowid(position(rowid) + offset)
+
 }
 case class SnapshotReferenceFrame(
   positionToRow: Array[Long],

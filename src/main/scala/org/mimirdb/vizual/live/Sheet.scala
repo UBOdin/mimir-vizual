@@ -10,7 +10,7 @@ class Sheet(
 ) 
   extends BaseSheet(data, fields)
 {
-  var expressions = DependencyGraph()
+  var expressions = new DependencyGraph()
 
 
 }

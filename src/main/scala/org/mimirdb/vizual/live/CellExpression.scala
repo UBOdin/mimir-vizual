@@ -7,6 +7,7 @@ import org.apache.spark.sql.catalyst.expressions.{
   Attribute,
   BoundReference
 }
+import org.apache.spark.sql.functions.expr 
 import breeze.math.Field.fieldShort
 
 /**
@@ -61,6 +62,8 @@ object CellExpression
     val (expression, inputs) = compile(column.expr, sheet)
     CellExpression(expression, inputs, sheet)
   }
+  def apply(column: String, sheet: BaseSheet):CellExpression =
+    apply(expr(column), sheet)
 
   val FIELD_OFFSET = "^\\[(\\$?)([^:\\]]+):(\\$?)(-?[0-9]+)\\]$".r
   val INVALID_FIELD = "^\\[.*".r
@@ -91,7 +94,7 @@ object CellExpression
         return c
       }
     }
-    (
+    val bound = 
       expression.transform {
         case a:Attribute => 
           {
@@ -103,8 +106,9 @@ object CellExpression
               true
             )
           }
-      },
-      fields.toArray
-    )
+      }
+    val analyzed:Expression = ???
+    
+    return (analyzed, fields.toArray)
   }
 }
